@@ -1,0 +1,2 @@
+npx eslint --fix src/
+npx prettier --write src/

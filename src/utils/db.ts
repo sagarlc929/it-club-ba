@@ -12,7 +12,7 @@ export class DatabaseUtil {
     try {
       mongoose.set('debug', true); // Enable Mongoose debugging
       console.log('Attempting to connect to MongoDB...'); // Debugging message
-      console.log(config.db_config.db);
+      // console.log(config.db_config.db);
       await mongoose.connect(config.db_config.db);
       console.log('Connected to the database');
     } catch (error) {

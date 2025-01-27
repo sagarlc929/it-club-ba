@@ -1,6 +1,8 @@
 import express, { Express } from 'express';
 import { IServerConfig, config } from './utils/config';
 import { Routes } from './routes';
+import cors from 'cors';
+
 export class ExpressServer {
   private static server = null;
   public server_config: IServerConfig = config;
@@ -10,7 +12,8 @@ export class ExpressServer {
 
     // initialize express app
     const app: Express = express();
-
+    app.use(express.json());
+    app.use(cors());
     app.get('/ping', (req, res) => {
       res.send('pong');
     });

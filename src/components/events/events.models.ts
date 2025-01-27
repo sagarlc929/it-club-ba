@@ -7,7 +7,7 @@ interface Speaker {
 
 interface Event extends Document {
   title: string;
-  date: string;
+  date: Date;
   location: string;
   description: string;
   image: string;

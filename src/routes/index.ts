@@ -1,10 +1,14 @@
 import { Router, Express } from 'express';
-import { HomeRoutes } from '../components/home/home.route';
+// import { HomeRoutes } from '../components/home/home.routes';
+import { EventsRoutes } from '../components/events/events.routes'
+import { BlogsRoutes } from '../components/blogs/blogs.routes';
 export class Routes {
   public router: Router;
   constructor(app: Express) {
     const routeClasses = [
-      HomeRoutes
+      // HomeRoutes,
+      EventsRoutes,
+      BlogsRoutes
     ];
     for (const routeClass of routeClasses) {
       try {

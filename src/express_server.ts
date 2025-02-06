@@ -1,7 +1,7 @@
-import express, { Express } from 'express';
-import { IServerConfig, config } from './utils/config';
-import { Routes } from './routes';
-import cors from 'cors';
+import express, { Express } from "express";
+import { IServerConfig, config } from "./utils/config";
+import { Routes } from "./routes";
+import cors from "cors";
 
 export class ExpressServer {
   private static server = null;
@@ -14,22 +14,24 @@ export class ExpressServer {
     const app: Express = express();
     app.use(express.json());
     app.use(cors());
-    app.get('/ping', (req, res) => {
-      res.send('pong');
+    app.get("/ping", (req, res) => {
+      res.send("pong");
     });
 
     const routes = new Routes(app);
     if (routes) {
-      console.log('Server routes stared for server');
+      console.log("Server routes stared for server");
     }
     ExpressServer.server = app.listen(port, () => {
-      console.log(`Server is running on port ${port} which pid = ${process.pid}`);
-    })
+      console.log(
+        `Server is running on port ${port} which pid = ${process.pid}`,
+      );
+    });
   }
   // close the express server for safe on uncaughtException
   public closeServer(): void {
     ExpressServer.server.close(() => {
-      console.log('Server closed');
+      console.log("Server closed");
       process.exit(0);
     });
   }

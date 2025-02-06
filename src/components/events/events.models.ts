@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document } from "mongoose";
 
 interface Speaker {
   name: string;
@@ -20,55 +20,55 @@ interface Event extends Document {
 const SpeakerSchema: Schema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   bio: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
 const EventSchema: Schema = new Schema(
   {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     date: {
       type: String,
-      required: true
+      required: true,
     },
     location: {
       type: String,
-      required: true
+      required: true,
     },
     description: {
       type: String,
-      required: true
+      required: true,
     },
     image: {
       type: String,
-      required: true
+      required: true,
     },
     slug: {
       type: String,
       required: true,
-      unique: true
+      unique: true,
     },
     schedule: {
-      type: String
+      type: String,
     },
     speakers: [SpeakerSchema],
     registrationLink: {
-      type: String
-    }
+      type: String,
+    },
   },
   {
-    timestamps: true // Optionally include timestamps for createdAt and updatedAt
-  }
+    timestamps: true, // Optionally include timestamps for createdAt and updatedAt
+  },
 );
 
 // Create the Event model
-const EventModel = mongoose.model<Event>('Event', EventSchema);
+const EventModel = mongoose.model<Event>("Event", EventSchema);
 
 export default EventModel;

@@ -4,8 +4,8 @@
   "description": "it club backend",
   "main": "dist/src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky"
+    "lint": "eslint --fix src/",
+    "dev": "nodemon dist/main.js"
   },
   "author": "summer",
   "license": "ISC",
@@ -31,6 +31,7 @@
     "nodemon": "^3.1.9",
     "prettier": "^3.4.2",
     "typescript": "^5.7.3",
-    "typescript-eslint": "^8.21.0"
+    "commitlint": "^19.7.1",
+    "typescript-eslint": "^8.23.0"
   }
 }

@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document } from 'mongoose';
+import mongoose, { Schema, Document } from "mongoose";
 
 // Define the interface for BlogPost
 interface BlogPost extends Document {
@@ -38,7 +38,7 @@ const BlogPostSchema: Schema = new Schema(
     slug: {
       type: String,
       required: true,
-      unique: true,  // Ensure the slug is unique for each blog post
+      unique: true, // Ensure the slug is unique for each blog post
     },
     author: {
       type: String,
@@ -51,10 +51,10 @@ const BlogPostSchema: Schema = new Schema(
   },
   {
     timestamps: true, // Automatically adds createdAt and updatedAt fields
-  }
+  },
 );
 
 // Create the BlogPost model
-const BlogModel = mongoose.model<BlogPost>('BlogPost', BlogPostSchema);
+const BlogModel = mongoose.model<BlogPost>("BlogPost", BlogPostSchema);
 
 export default BlogModel;

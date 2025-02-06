@@ -5,7 +5,8 @@
   "main": "dist/src/index.js",
   "scripts": {
     "lint": "eslint --fix src/",
-    "dev": "nodemon dist/main.js"
+    "dev": "nodemon dist/main.js",
+    "prepare": "husky"
   },
   "author": "summer",
   "license": "ISC",
